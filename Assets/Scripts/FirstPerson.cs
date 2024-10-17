@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class FirstPerson : MonoBehaviour
@@ -11,6 +12,7 @@ public class FirstPerson : MonoBehaviour
     void Start()
     {
 
+        Cursor.lockState = CursorLockMode.Locked;
         cc = GetComponent<CharacterController>();
 
     }
