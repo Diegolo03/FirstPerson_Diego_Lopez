@@ -6,7 +6,7 @@ public class FirstPerson : MonoBehaviour
 {
     [SerializeField] private float velocidadMovimiento;
     CharacterController cc;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +18,18 @@ public class FirstPerson : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
        float h= Input.GetAxisRaw("Horizontal");
        float v= Input.GetAxisRaw("Vertical");
-        
+        Vector2 input = new Vector2(h, v).normalized;
 
+        if (input.magnitude > 0)
+        {
+            float anguloRotacion = Mathf.Atan2(input.x, input.y) * Mathf.Rad2Deg+Camera.main.transform.eulerAngles.y;
+            transform.eulerAngles = new Vector3(0, anguloRotacion, 0);
+            Vector3 movimiento = Quaternion.Euler(0, anguloRotacion, 0) * Vector3.forward;
+
+            cc.Move(movimiento * velocidadMovimiento * Time.deltaTime);
+        }
     }
 }
