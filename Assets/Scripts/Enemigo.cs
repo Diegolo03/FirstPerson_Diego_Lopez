@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,16 +8,85 @@ public class Enemigo : MonoBehaviour
 {
     private NavMeshAgent agent;
     private FirstPerson player;
+    private Animator anim;
+    private bool ventanaAbierta;
+    [SerializeField] private Transform attackPoint;
+    [SerializeField] private float radioAtaque = 0.3f;
+    [SerializeField] private float dano;
+    private bool danorealizado=false;
+    [SerializeField] private LayerMask queEsPlayer;
+    private FirstPerson fp;
+
+    public float Dano { get => dano; set => dano = value; }
+
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindObjectOfType<FirstPerson>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        Perseguir();
+        if (ventanaAbierta && danorealizado==false) 
+        {
+            DetectarJugador();
+        }
+    }
+
+    private void DetectarJugador()
+    {
+        Collider[] collsDetectados = Physics.OverlapSphere(attackPoint.position, radioAtaque, queEsPlayer);
+        if (collsDetectados.Length > 0)
+        {
+
+            for (int i = 0; i < collsDetectados.Length; i++)
+            {
+                collsDetectados[i].GetComponent<FirstPerson>().RecibirDano(dano);
+
+            }
+            danorealizado = true;
+
+
+        }
+    }
+    private void OnDrawGizmos()
+    {
+
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawSphere(attackPoint.position, radioAtaque);
+    }
+
+    
+    private void Perseguir()
+    {
         agent.SetDestination(player.transform.position);
+        if (agent.remainingDistance <= agent.stoppingDistance)
+        {
+            agent.isStopped = true;
+            anim.SetBool("Attacking", true);
+
+
+        }
+    }
+    #region Eventos Animacion
+    private void FinAtaque()
+    {
+        agent.isStopped = false;
+        danorealizado = false;
+        anim.SetBool("Attacking", false);
+    }
+    #endregion
+    private void AbrirVentanaAtaque()
+    {
+        ventanaAbierta = true;
+    }
+   
+    private void CerrarVentanaAtaque()
+    {
+        ventanaAbierta = false;
     }
 }
