@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class ArmaManual : MonoBehaviour
 {
-    [SerializeField]ParticleSystem system;
+    [SerializeField] private ArmaSO misDatos;
+    [SerializeField] private ParticleSystem system;
+    
     // Start is called before the first frame update
+    private Camera cam;
     void Start()
     {
-        
+        cam = Camera.main;
     }
 
     // Update is called once per frame
@@ -16,8 +19,18 @@ public class ArmaManual : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+
            system.Play();
+
+           if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hitInfo, misDatos.distanciaAtaque))
+           {
+
+                Debug.Log(misDatos.danhoAtaque);
+                hitInfo.transform.GetComponent<Enemigo>().RecibirDanho(misDatos.danhoAtaque);
+
+           }
 
         }
     }
+    
 }

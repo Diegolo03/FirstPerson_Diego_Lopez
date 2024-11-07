@@ -13,10 +13,11 @@ public class Enemigo : MonoBehaviour
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float radioAtaque = 0.3f;
     [SerializeField] private float dano;
+    private float danhoRecibido;
     private bool danorealizado=false;
     [SerializeField] private LayerMask queEsPlayer;
     private FirstPerson fp;
-
+    [SerializeField] private float vidas=100;
     public float Dano { get => dano; set => dano = value; }
 
     // Start is called before the first frame update
@@ -70,6 +71,15 @@ public class Enemigo : MonoBehaviour
             anim.SetBool("Attacking", true);
 
 
+        }
+    }
+    public void RecibirDanho(float danhoRecibido)
+    {
+        vidas -= danhoRecibido;
+
+        if (vidas <= 0)
+        {
+            Destroy(gameObject);
         }
     }
     #region Eventos Animacion

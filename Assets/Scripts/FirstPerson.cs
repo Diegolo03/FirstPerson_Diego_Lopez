@@ -45,7 +45,7 @@ public class FirstPerson: MonoBehaviour
             float anguloRotacion = Mathf.Atan2(input.x, input.y) * Mathf.Rad2Deg + cam.transform.eulerAngles.y;
             transform.eulerAngles = new Vector3(0, anguloRotacion, 0);
             Vector3 movimiento = Quaternion.Euler(0, anguloRotacion, 0) * Vector3.forward;
-            cc.Move(movimiento * velocidadMovimiento * Time.deltaTime);
+            cc.Move((movimiento * velocidadMovimiento) * Time.deltaTime);
         }
 
         AplicarGravedad();
