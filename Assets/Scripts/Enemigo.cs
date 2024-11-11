@@ -15,7 +15,7 @@ public class Enemigo : MonoBehaviour
     [SerializeField] private float radioAtaque = 0.3f;
     [SerializeField] private float dano;
     private float danhoRecibido;
-    private bool danorealizado=false, estado=true;
+    private bool danorealizado=false, estado;
     [SerializeField] private LayerMask queEsPlayer;
     private FirstPerson fp;
     [SerializeField] private float vidas=100;

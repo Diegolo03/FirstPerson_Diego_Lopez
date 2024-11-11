@@ -14,9 +14,13 @@ using UnityEngine;
 [DisallowMultipleComponent]
 
 public class Outline : MonoBehaviour {
+    private bool estado;
   private static HashSet<Mesh> registeredMeshes = new HashSet<Mesh>();
 
-  public enum Mode {
+   
+
+
+    public enum Mode {
     OutlineAll,
     OutlineVisible,
     OutlineHidden,
