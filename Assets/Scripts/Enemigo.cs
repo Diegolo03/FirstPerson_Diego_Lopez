@@ -9,23 +9,27 @@ public class Enemigo : MonoBehaviour
     private NavMeshAgent agent;
     private FirstPerson player;
     private Animator anim;
+    private Rigidbody[] huesos;
     private bool ventanaAbierta;
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float radioAtaque = 0.3f;
     [SerializeField] private float dano;
     private float danhoRecibido;
-    private bool danorealizado=false;
+    private bool danorealizado=false, estado=true;
     [SerializeField] private LayerMask queEsPlayer;
     private FirstPerson fp;
     [SerializeField] private float vidas=100;
     public float Dano { get => dano; set => dano = value; }
+    public float Vidas { get => vidas; set => vidas = value; }
 
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindObjectOfType<FirstPerson>();
+        huesos = GetComponentsInChildren<Rigidbody>();
         anim = GetComponent<Animator>();
+        CambiarEstadosHuesos(true);
     }
 
     // Update is called once per frame
@@ -73,15 +77,30 @@ public class Enemigo : MonoBehaviour
 
         }
     }
-    public void RecibirDanho(float danhoRecibido)
+    public void Morir()
     {
-        vidas -= danhoRecibido;
-
-        if (vidas <= 0)
+        agent.enabled = false;
+        anim.enabled = false;
+        CambiarEstadosHuesos(false);
+        // pasados 10 seg o lo que pongas desaparece 
+        Destroy(gameObject, 10);
+    }
+    private void CambiarEstadosHuesos(bool estado)
+    {
+        for (int i = 0; i < huesos.Length; i++)
         {
-            Destroy(gameObject);
+            huesos[i].isKinematic = estado;
         }
     }
+    //public void RecibirDanho(float danhoRecibido)
+    //{
+    //    vidas -= danhoRecibido;
+
+    //    if (vidas <= 0)
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
     #region Eventos Animacion
     private void FinAtaque()
     {
