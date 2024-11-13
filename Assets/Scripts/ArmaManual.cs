@@ -7,7 +7,6 @@ public class ArmaManual : MonoBehaviour
     [SerializeField] private ArmaSO misDatos;
     [SerializeField] private ParticleSystem system;
     private Animator anim;
-    private int timmer = 5;
     
     // Start is called before the first frame update
     private Camera cam;
@@ -22,12 +21,8 @@ public class ArmaManual : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Y))
         {
-            anim.SetBool("Inspeccionando", true);
-            if (Input.GetKeyDown(KeyCode.Y))
-            {
-                anim.SetBool("Inspeccionando", false);
-            }
-                
+
+            anim.SetTrigger("Inspeccionando");
 
         }
         if (Input.GetMouseButtonDown(0))
@@ -44,9 +39,5 @@ public class ArmaManual : MonoBehaviour
 
         }
     }
-    public void DejarInspeccion()
-    {
-        anim.SetBool("Inspeccionando", false);
-    }
-
+   
 }

@@ -26,6 +26,8 @@ public class SistemaInteracciones : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E)&& interactuado==false)
                 {
                     scriptCaja.AbrirCaja();
+
+
                     StartCoroutine(CambioEstado());
                     interactuado = true;
 
@@ -46,7 +48,7 @@ public class SistemaInteracciones : MonoBehaviour
     }
     IEnumerator CambioEstado()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
 
     }
 }
