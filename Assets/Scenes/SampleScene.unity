@@ -848,11 +848,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1120575142166497671, guid: d2284836e95d5ff4fb987fb4bfa25039,
-        type: 3}
-      propertyPath: distanciaInteraccion
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4355585943399864336, guid: d2284836e95d5ff4fb987fb4bfa25039,
         type: 3}
       propertyPath: m_Name
