@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802026a79dd69774d8808cd7c649d62d, type: 3}
   m_Name: Metralleta
   m_EditorClassIdentifier: 
-  balasCargador: 6
-  balasBolsa: 40
+  balasCargador: 60
+  balasBolsa: 200
   distanciaAtaque: 500
-  danhoAtaque: 25
-  cadenciaAtaque: 1.5
+  danhoAtaque: 40
+  cadenciaAtaque: 0.05
