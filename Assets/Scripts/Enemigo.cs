@@ -47,6 +47,11 @@ public class Enemigo : MonoBehaviour
             DetectarJugador();
         }
     }
+    private void EnfocarPlayer()
+    {
+        Vector3 dirreccionPlayer = (player.transform.position - transform.position).normalized;
+        Quaternion.LookRotation(dirreccionPlayer);
+    }
 
     private void DetectarJugador()
     {

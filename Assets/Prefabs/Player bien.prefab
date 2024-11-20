@@ -852,11 +852,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Minigun_lowpoly
       objectReference: {fileID: 0}
+    - target: {fileID: 9049981055117415007, guid: 5ccc84a48bb729f4f816011872685f32,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9049981055117415007, guid: 5ccc84a48bb729f4f816011872685f32,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2839151280286035913}
   m_SourcePrefab: {fileID: 100100000, guid: 5ccc84a48bb729f4f816011872685f32, type: 3}
+--- !u!198 &2602816343726941629 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2932926156839572391, guid: 5ccc84a48bb729f4f816011872685f32,
+    type: 3}
+  m_PrefabInstance: {fileID: 913341633875097114}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6101903471424115773 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6341780212308910631, guid: 5ccc84a48bb729f4f816011872685f32,
@@ -869,6 +884,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 913341633875097114}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2839151280286035913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8159162095581717573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd67a7965a830b149862955c372da977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  misDatos: {fileID: 11400000, guid: 3d3cfc897be83bf4bb16fb6c388747c1, type: 2}
+  system: {fileID: 2602816343726941629}
 --- !u!1001 &3082059620194129726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -880,17 +909,17 @@ PrefabInstance:
     - target: {fileID: 942415613979193719, guid: bb81ee5083596794f8d76306ad61dd9f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.69
+      value: 0.959
       objectReference: {fileID: 0}
     - target: {fileID: 942415613979193719, guid: bb81ee5083596794f8d76306ad61dd9f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.08
+      value: 0.104
       objectReference: {fileID: 0}
     - target: {fileID: 942415613979193719, guid: bb81ee5083596794f8d76306ad61dd9f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.83
+      value: -0.143
       objectReference: {fileID: 0}
     - target: {fileID: 942415613979193719, guid: bb81ee5083596794f8d76306ad61dd9f,
         type: 3}
@@ -930,7 +959,7 @@ PrefabInstance:
     - target: {fileID: 2381007751006291319, guid: bb81ee5083596794f8d76306ad61dd9f,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 0
+      value: 1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 2381007751006291319, guid: bb81ee5083596794f8d76306ad61dd9f,
         type: 3}
@@ -940,12 +969,12 @@ PrefabInstance:
     - target: {fileID: 2381007751006291319, guid: bb81ee5083596794f8d76306ad61dd9f,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: NaN
+      value: 3.4e-44
       objectReference: {fileID: 0}
     - target: {fileID: 2381007751006291319, guid: bb81ee5083596794f8d76306ad61dd9f,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 0
+      value: 6e-44
       objectReference: {fileID: 0}
     - target: {fileID: 3802734775091201223, guid: bb81ee5083596794f8d76306ad61dd9f,
         type: 3}
@@ -986,6 +1015,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Powders Pistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334684554429565991, guid: 7ff325b2b19abd546922361a4ae5a300,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2448683423257622060, guid: 7ff325b2b19abd546922361a4ae5a300,
         type: 3}
@@ -1044,7 +1078,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2869231551143339593}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2334684554429565991, guid: 7ff325b2b19abd546922361a4ae5a300,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5869285082206680254}
   m_SourcePrefab: {fileID: 100100000, guid: 7ff325b2b19abd546922361a4ae5a300, type: 3}
 --- !u!1 &1908975191287778940 stripped
 GameObject:
@@ -1052,6 +1090,27 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4186234293470642779}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &5869285082206680254
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908975191287778940}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 05a5eddb8caea7542b75ef94210aa48f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &2009455839517619319 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2448683423257622060, guid: 7ff325b2b19abd546922361a4ae5a300,
@@ -1120,6 +1179,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: low poly unwrapped
+      objectReference: {fileID: 0}
+    - target: {fileID: 2558205013177387449, guid: fe6b55f19d438504db71fb780d3b8d06,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5830774159561158772, guid: fe6b55f19d438504db71fb780d3b8d06,
         type: 3}

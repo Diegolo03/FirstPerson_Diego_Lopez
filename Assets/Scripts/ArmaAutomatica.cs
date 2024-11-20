@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmaManual : MonoBehaviour
+public class ArmaAutomatica : MonoBehaviour
 {
     [SerializeField] private ArmaSO misDatos;
     [SerializeField] private ParticleSystem system;
     private Animator anim;
+    private float timmer;
     
     // Start is called before the first frame update
     private Camera cam;
@@ -14,18 +15,14 @@ public class ArmaManual : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         cam = Camera.main;
+        timmer = misDatos.cadenciaAtaque;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-
-            anim.SetTrigger("Inspeccionando");
-
-        }
-        if (Input.GetMouseButtonDown(0))
+        timmer+=1*Time.deltaTime;
+        if (Input.GetMouseButton(0) && timmer >= misDatos.cadenciaAtaque) 
         {
 
            system.Play();
@@ -37,8 +34,10 @@ public class ArmaManual : MonoBehaviour
                     hitInfo.transform.GetComponent<ParteDeEnemigo>().RecibirDanho(misDatos.danhoAtaque);
 
                 }
+                
 
-           }
+            }
+            timmer = 0;
 
         }
     }
