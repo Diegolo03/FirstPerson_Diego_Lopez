@@ -3693,6 +3693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 3988145464529537821}
+  sonido: {fileID: 3094213935402799616}
   radioAtaque: 0.5
   dano: 25
   queEsPlayer:

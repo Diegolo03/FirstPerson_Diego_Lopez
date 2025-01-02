@@ -12,6 +12,7 @@ public class Enemigo : MonoBehaviour
     private Rigidbody[] huesos;
     private bool ventanaAbierta;
     [SerializeField] private Transform attackPoint;
+    [SerializeField] private AudioSource sonido;
     [SerializeField] private float radioAtaque = 0.3f;
     [SerializeField] private float dano;
     private float danhoRecibido;
@@ -92,6 +93,7 @@ public class Enemigo : MonoBehaviour
     {
         agent.enabled = false;
         anim.enabled = false;
+        sonido.enabled = false;
         CambiarEstadosHuesos(false);
         // pasados 10 seg o lo que pongas desaparece 
         Destroy(gameObject, 10);
