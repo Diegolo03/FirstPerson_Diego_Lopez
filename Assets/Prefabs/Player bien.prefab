@@ -221,7 +221,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -301,7 +301,7 @@ Transform:
   m_GameObject: {fileID: 2058682196765716134}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.627, z: 0.013}
+  m_LocalPosition: {x: -0, y: -0.54, z: 0.002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -322,7 +322,6 @@ GameObject:
   - component: {fileID: 6849955552368210148}
   - component: {fileID: 15731155329876652}
   - component: {fileID: 2703797916117912997}
-  - component: {fileID: 2429051867984925237}
   m_Layer: 6
   m_Name: PlayerBody
   m_TagString: Untagged
@@ -374,13 +373,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0543ef1f4819bc4b8a36ad776deade3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadMovimiento: 1
+  velocidadMovimiento: 5
   vidas: 100
   range: 5
   MovimientoVertical: {x: 0, y: 0, z: 0}
   escalaGravedad: -9.81
-  alturaSalto: 3
-  Pies: {fileID: 793054634298805348}
+  alturaSalto: 2
+  pies: {fileID: 793054634298805348}
   radioDeteccion: 0.51
   queEsSuelo:
     serializedVersion: 2
@@ -488,29 +487,6 @@ CharacterController:
   m_SkinWidth: 0.0001
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2429051867984925237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2242599157481092600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0543ef1f4819bc4b8a36ad776deade3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidadMovimiento: 5
-  vidas: 0
-  range: 5
-  MovimientoVertical: {x: 0, y: 0, z: 0}
-  escalaGravedad: -9.81
-  alturaSalto: 3
-  Pies: {fileID: 793054634298805348}
-  radioDeteccion: 0.51
-  queEsSuelo:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!1 &4355585943399864336
 GameObject:
   m_ObjectHideFlags: 0

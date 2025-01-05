@@ -16,7 +16,7 @@ public class FirstPerson: MonoBehaviour
     [SerializeField] private Vector3 MovimientoVertical;
     [SerializeField] private float escalaGravedad;
     [SerializeField] private float alturaSalto = 3f;
-    [SerializeField] private Transform Pies;
+    [SerializeField] private Transform pies;
     [SerializeField] private float radioDeteccion = 0.3f;
     [SerializeField] private LayerMask queEsSuelo;
     
@@ -60,7 +60,7 @@ public class FirstPerson: MonoBehaviour
 
     private void DeteccionSuelo()
     {
-        Collider[] collsDetectados = Physics.OverlapSphere(Pies.position, radioDeteccion, queEsSuelo);
+        Collider[] collsDetectados = Physics.OverlapSphere(pies.position, radioDeteccion, queEsSuelo);
         if (collsDetectados.Length > 0)
         {
             MovimientoVertical.y = 0;
@@ -71,7 +71,7 @@ public class FirstPerson: MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.cyan;
-        Gizmos.DrawSphere(Pies.position, radioDeteccion);
+        Gizmos.DrawSphere(pies.position, radioDeteccion);
     }
     public void RecibirDano(float danorecibido)
     {

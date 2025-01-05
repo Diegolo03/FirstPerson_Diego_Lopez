@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ParteEnemigo
   - Interactuable
+  - escalera
   layers:
   - Default
   - TransparentFX
