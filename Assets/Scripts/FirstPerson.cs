@@ -10,10 +10,8 @@ public class FirstPerson: MonoBehaviour
     private CharacterController cc;
     private Camera cam;
 
-    public float range = 5f;
-
     [Header("Configuración Gravedad")]
-    [SerializeField] private Vector3 MovimientoVertical;
+    [SerializeField] private Vector3 movimientoVertical;
     [SerializeField] private float escalaGravedad;
     [SerializeField] private float alturaSalto = 3f;
     [SerializeField] private Transform pies;
@@ -54,8 +52,8 @@ public class FirstPerson: MonoBehaviour
     }
     private void AplicarGravedad()
     {
-        MovimientoVertical.y += escalaGravedad * Time.deltaTime;
-        cc.Move(MovimientoVertical * Time.deltaTime);
+        movimientoVertical.y += escalaGravedad * Time.deltaTime;
+        cc.Move(movimientoVertical * Time.deltaTime);
     }
 
     private void DeteccionSuelo()
@@ -63,7 +61,7 @@ public class FirstPerson: MonoBehaviour
         Collider[] collsDetectados = Physics.OverlapSphere(pies.position, radioDeteccion, queEsSuelo);
         if (collsDetectados.Length > 0)
         {
-            MovimientoVertical.y = 0;
+            movimientoVertical.y = 0;
             Saltar();
         }
     }
@@ -87,7 +85,7 @@ public class FirstPerson: MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            MovimientoVertical.y = Mathf.Sqrt(-2 * escalaGravedad * alturaSalto);
+            movimientoVertical.y = Mathf.Sqrt(-2 * escalaGravedad * alturaSalto);
         }
     }
 }

@@ -8,7 +8,7 @@ public class Granada : MonoBehaviour
     [SerializeField] private float fuerzaImpulso = 10f; 
     [SerializeField] private float tiempoDeVida = 5f; 
     [SerializeField] float explosionRadius = 5f; 
-    [SerializeField] float explosionDamage = 50f;
+    [SerializeField] float explosionDamage = 100f;
     [SerializeField] GameObject prefabExplosion;
     [SerializeField] LayerMask damageableLayer;
     private Rigidbody rb;
