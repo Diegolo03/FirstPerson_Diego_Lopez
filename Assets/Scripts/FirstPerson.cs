@@ -49,7 +49,7 @@ public class FirstPerson: MonoBehaviour
         if (TiempoFuera||vidas==0)
         {
             TiempoFuera = false;
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(3);
         }
         if (recogibles==5)
         {
