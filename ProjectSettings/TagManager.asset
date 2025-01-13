@@ -7,6 +7,7 @@ TagManager:
   - ParteEnemigo
   - Interactuable
   - escalera
+  - Coleccionable
   layers:
   - Default
   - TransparentFX

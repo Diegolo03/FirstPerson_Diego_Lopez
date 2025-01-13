@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class FirstPerson: MonoBehaviour
 {
     [SerializeField] private float velocidadMovimiento;
     [SerializeField] private float vidas;
+    [SerializeField] private float porcentajeVida;
     private CharacterController cc;
     private Camera cam;
 
@@ -18,7 +20,13 @@ public class FirstPerson: MonoBehaviour
     [SerializeField] private Transform pies;
     [SerializeField] private float radioDeteccion = 0.3f;
     [SerializeField] private LayerMask queEsSuelo;
-    public bool TiempoFuera = false;
+    [SerializeField] private bool tiempoFuera = false;
+    [SerializeField] private int recogibles;
+    [SerializeField] private Image barraDeVida;
+
+    public float Vidas { get => vidas; set => vidas = value; }
+    public int Recogibles { get => recogibles; set => recogibles = value; }
+    public bool TiempoFuera { get => tiempoFuera; set => tiempoFuera = value; }
 
 
 
@@ -35,9 +43,17 @@ public class FirstPerson: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (TiempoFuera)
+
+        porcentajeVida = (Vidas / 100); 
+        barraDeVida.fillAmount = porcentajeVida;
+        if (TiempoFuera||vidas==0)
         {
             TiempoFuera = false;
+            SceneManager.LoadScene(1);
+        }
+        if (recogibles==5)
+        {
+            
             SceneManager.LoadScene(2);
         }
         float h = Input.GetAxisRaw("Horizontal");

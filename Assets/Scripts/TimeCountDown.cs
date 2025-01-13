@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class TimeCountDown : MonoBehaviour
 {
-    [SerializeField] int minutos;
-    [SerializeField] int segundos;
-    [SerializeField] TextMeshProUGUI tiempo;
-    [SerializeField] FirstPerson fp;
+    [SerializeField] private int minutos;
+    [SerializeField] private int segundos;
+    [SerializeField] private TextMeshProUGUI tiempo;
+    [SerializeField] private FirstPerson fp;
 
-    float resto;
-    bool play;
+    private float resto;
+    private bool play;
 
 
     private void Awake()
@@ -39,6 +39,10 @@ public class TimeCountDown : MonoBehaviour
 
         }
 
+    }
+    public void AnadirTiempo(int bonus)
+    {
+        resto += bonus;
     }
 }
 
