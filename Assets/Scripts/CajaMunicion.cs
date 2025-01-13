@@ -14,11 +14,11 @@ public class CajaMunicion : MonoBehaviour
 
     public void AbrirCaja()
     {
-        anim.SetTrigger("Abriendo_Caja");
+        anim.SetTrigger("Abriendo");
     }
     public void CerrarCaja()
     {
-        anim.SetTrigger("Cerrando_Caja");
+        anim.SetTrigger("Cerrando");
         StartCoroutine(CambioEstado());
     }
     IEnumerator CambioEstado()

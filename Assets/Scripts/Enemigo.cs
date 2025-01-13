@@ -8,7 +8,7 @@ public class Enemigo : MonoBehaviour
 {
     private NavMeshAgent agent;
     private FirstPerson player;
-    private Animator anim;
+    [SerializeField] private Animator anim,anim2;
     private Rigidbody[] huesos;
     private bool ventanaAbierta;
     [SerializeField] private Transform attackPoint;
@@ -85,6 +85,7 @@ public class Enemigo : MonoBehaviour
         {
             agent.isStopped = true;
             anim.SetBool("Attacking", true);
+            anim2.SetBool("Attacking", true);
 
 
         }
@@ -93,6 +94,7 @@ public class Enemigo : MonoBehaviour
     {
         agent.enabled = false;
         anim.enabled = false;
+        anim2.enabled = false;
         sonido.enabled = false;
         CambiarEstadosHuesos(false);
         // pasados 10 seg o lo que pongas desaparece 
@@ -120,6 +122,7 @@ public class Enemigo : MonoBehaviour
         agent.isStopped = false;
         danorealizado = false;
         anim.SetBool("Attacking", false);
+        anim2.SetBool("Attacking", false);
     }
     #endregion
     private void AbrirVentanaAtaque()

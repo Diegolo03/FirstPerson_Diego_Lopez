@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FirstPerson: MonoBehaviour
 {
@@ -17,7 +18,9 @@ public class FirstPerson: MonoBehaviour
     [SerializeField] private Transform pies;
     [SerializeField] private float radioDeteccion = 0.3f;
     [SerializeField] private LayerMask queEsSuelo;
-    
+    public bool TiempoFuera = false;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +35,11 @@ public class FirstPerson: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (TiempoFuera)
+        {
+            TiempoFuera = false;
+            SceneManager.LoadScene(2);
+        }
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
         Vector2 input = new Vector2(h, v).normalized;
