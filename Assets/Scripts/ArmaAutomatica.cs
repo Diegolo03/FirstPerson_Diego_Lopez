@@ -6,6 +6,7 @@ public class ArmaAutomatica : MonoBehaviour
 {
     [SerializeField] private ArmaSO misDatos;
     [SerializeField] private ParticleSystem system;
+    [SerializeField] private AudioSource aus;
     private Animator anim;
     private float timmer;
     
@@ -24,7 +25,7 @@ public class ArmaAutomatica : MonoBehaviour
         timmer+=1*Time.deltaTime;
         if (Input.GetMouseButton(0) && timmer >= misDatos.cadenciaAtaque) 
         {
-
+            ReproducirSonido(aus.clip);
            system.Play();
 
            if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hitInfo, misDatos.distanciaAtaque))
@@ -41,5 +42,10 @@ public class ArmaAutomatica : MonoBehaviour
 
         }
     }
-   
+    private void ReproducirSonido(AudioClip clip)
+    {
+        aus.PlayOneShot(clip);
+
+    }
+
 }

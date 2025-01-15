@@ -35,7 +35,7 @@ ModelImporter:
       name: teeth
     second: {fileID: 2100000, guid: ab11a794afa60a542b0e45c8010d558e, type: 2}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1

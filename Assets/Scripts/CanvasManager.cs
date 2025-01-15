@@ -9,6 +9,10 @@ public class CanvasManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+    public void jugar()
+    {
+        SceneManager.LoadScene(2);
+    }
     public void FinPartida()
     {
         Application.Quit();

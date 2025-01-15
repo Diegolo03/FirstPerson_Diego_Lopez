@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class ArmaManual : MonoBehaviour
 {
     [SerializeField] private ArmaSO misDatos;
     [SerializeField] private ParticleSystem system;
+    [SerializeField] private AudioSource aus;
     private Animator anim;
     
     // Start is called before the first frame update
@@ -27,8 +29,8 @@ public class ArmaManual : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
-
-           system.Play();
+            ReproducirSonido(aus.clip);
+            system.Play();
 
            if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hitInfo, misDatos.distanciaAtaque))
            {
@@ -42,5 +44,10 @@ public class ArmaManual : MonoBehaviour
 
         }
     }
-   
+    private void ReproducirSonido(AudioClip clip)
+    {
+        aus.PlayOneShot(clip);
+
+    }
+
 }
